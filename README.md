@@ -12,5 +12,6 @@ Steps to integrate a Flutter module into Swift project using Frameworks and Coco
 6. Run: 
     pod install
 7. Follow the instruction to add flutter module to native
-    https://docs.flutter.dev/add-to-app/ios/project-setup#92-tab-panel
+    https://docs.flutter.dev/add-to-app/ios/project-setup#method-c
+    *Remember to switch to "Use Frameworks and Cocoapods" tab
 8. Build
