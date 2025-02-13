@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'  # Updated to iOS 11.0 for better compatibility
+
+flutter_application_path = '../../kms_emi_calculator_sdk'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+target 'uno_ios' do
+  use_frameworks! :linkage => :static  # Use static linkage to avoid plugin conflicts
+
+  install_all_flutter_pods(flutter_application_path)
+
+  # Pods for uno_ios
+
+  target 'uno_iosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'uno_iosUITests' do
+    # Pods for UI testing
+  end
+
+  post_install do |installer|
+    flutter_post_install(installer) if defined?(flutter_post_install)
+    installer.pods_project.targets.each do |target|
+      flutter_additional_ios_build_settings(target)
+      target.build_configurations.each do |config|
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+          '$(inherited)',
+          'PERMISSION_MICROPHONE=1',
+          'PERMISSION_CAMERA=1',
+          'PERMISSION_PHOTOS=1',
+        ]
+      end
+    end
+  end
+end
