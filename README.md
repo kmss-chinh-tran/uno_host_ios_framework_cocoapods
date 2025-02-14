@@ -13,5 +13,8 @@ Steps to integrate a Flutter module into Swift project using Frameworks and Coco
     pod install
 7. Follow the instruction to add flutter module to native
     https://docs.flutter.dev/add-to-app/ios/project-setup#method-c
-    *Remember to switch to "Use Frameworks and Cocoapods" tab
+    *NOTE:
+   - Remember to switch to "Use Frameworks and Cocoapods" tab
+   - These frameworks are required to use kms_emi_calculator_sdk
+     <img width="716" alt="frameworks" src="https://github.com/user-attachments/assets/12610366-4fda-4c4e-b67f-05878a4d0c32" />
 8. Build
